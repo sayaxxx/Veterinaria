@@ -1,0 +1,4 @@
+Id,IdCitaFk,IdMedicamentoFk,Dosis,FechaAdministracion,Observacion
+1,1,1,1,2023-01-05,Operar
+2,2,2,2,2023-02-10,Peluquear
+3,3,3,3,2023-03-15,Sacrificar

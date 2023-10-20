@@ -45,7 +45,7 @@ public class VeterinarioRepository : GenericRepo<Veterinario>, IVeterinario{
         var Veterinarios = await (
             from v in _context.Veterinarios
             
-            where v.Especialidad.Contains("Cirujano vascular")
+            where v.Especialidad.Contains("Cirujano Cardiovascular")
             select new{
                 Nombre = v.Nombre,
                 Email = v.Email,

@@ -1,0 +1,4 @@
+Id,IdMedicamentoFk,Cantidad,IdMovimientoMedicamentoFk,Precio
+1,1,5,1,25000
+2,2,10,2,50000
+3,3,15,3,75000

@@ -138,7 +138,7 @@ public class MascotaController : BaseApiController
     [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<object>> ConsulcantidadMascotasRazata6B()
+    public async Task<ActionResult<object>> cantidadMascotasRaza()
     {
         var entidad = await unitofwork.Mascotas.cantidadMascotasRaza();
         var dto = mapper.Map<IEnumerable<object>>(entidad);
