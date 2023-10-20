@@ -1,0 +1,4 @@
+Id,IdMascotaFk,Fecha,Hora,Motivo,IdVeterinarioFk
+1,1,2023-05-29,2023-05-29 11:00:00,Tos,1
+2,2,2023-07-12,2023-07-12 06:00:00,Gripe,2
+3,3,2023-12-24,2023-12-24 10:00:00,Convulsion,3
