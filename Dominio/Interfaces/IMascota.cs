@@ -10,6 +10,6 @@ public interface IMascota : IGenericRepo<Mascota>{
     Task<(int totalRegistros, object registros)> mascotasPorEspecie(int pageIndex, int pageSize, string search);
     Task<object> mascotasAtendidasVeterinario(); //3B
     Task<(int totalRegistros, object registros)> mascotasAtendidasVeterinario(int pageIndex, int pageSize, string search);
-    Task<object> cantidadMascotasRaza(); //6B
-    Task<(int totalRegistros, object registros)> cantidadMascotasRaza(int pageIndex, int pageSize, string search);
+    Task<object> mascotasPertenecientesRaza(); //6B
+    Task<(int totalRegistros, object registros)> mascotasPertenecientesRaza(int pageIndex, int pageSize, string search);
 }

@@ -257,7 +257,9 @@ public class MascotaRepository : GenericRepo<Mascota>, IMascota{
 
         return (totalRegistros, registros);
     }
-    public virtual async Task<object> cantidadMascotasRaza(){
+
+    public virtual async Task<object> mascotasPertenecientesRaza()
+    {
         var consulta =
         from r in _context.Razas
         select new
@@ -269,7 +271,7 @@ public class MascotaRepository : GenericRepo<Mascota>, IMascota{
         var MascotasPorRaza = await consulta.ToListAsync();
         return MascotasPorRaza;
     }
-    public virtual async Task<(int totalRegistros,object registros)> cantidadMascotasRaza(int pageIndex, int pageSize, string search)
+    public virtual async Task<(int totalRegistros,object registros)> mascotasPertenecientesRaza(int pageIndex, int pageSize, string search)
     {
         var query = 
                 from r in _context.Razas

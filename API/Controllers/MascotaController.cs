@@ -134,23 +134,23 @@ public class MascotaController : BaseApiController
         var listEntidad = mapper.Map<List<object>>(entidad.registros);
         return new Pager<object>(listEntidad, entidad.totalRegistros, paisParams.PageIndex, paisParams.PageSize, paisParams.Search);
     }
-    [HttpGet("cantidadMascotasRaza")]
+    [HttpGet("mascotasPertenecientesRaza")]
     [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<object>> cantidadMascotasRaza()
+    public async Task<ActionResult<object>> mascotasPertenecientesRaza()
     {
-        var entidad = await unitofwork.Mascotas.cantidadMascotasRaza();
+        var entidad = await unitofwork.Mascotas.mascotasPertenecientesRaza();
         var dto = mapper.Map<IEnumerable<object>>(entidad);
         return Ok(dto);
     }
-    [HttpGet("cantidadMascotasRaza")]
+    [HttpGet("mascotasPertenecietesRaza")]
     [MapToApiVersion("1.1")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Pager<object>>> cantidadMascotasRazaPag([FromQuery] Params paisParams)
+    public async Task<ActionResult<Pager<object>>> mascotasPertenecientesRazaPag([FromQuery] Params paisParams)
     {
-        var entidad = await unitofwork.Mascotas.cantidadMascotasRaza(paisParams.PageIndex, paisParams.PageSize, paisParams.Search);
+        var entidad = await unitofwork.Mascotas.mascotasPertenecientesRaza(paisParams.PageIndex, paisParams.PageSize, paisParams.Search);
         var listEntidad = mapper.Map<List<object>>(entidad.registros);
         return new Pager<object>(listEntidad, entidad.totalRegistros, paisParams.PageIndex, paisParams.PageSize, paisParams.Search);
     }
@@ -174,7 +174,7 @@ public class MascotaController : BaseApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
 
-    public async Task<ActionResult<MascotaDto>> Put(int id, MascotaDto entidadDto){
+    public async Task<ActionResult<MascotaDto>> Put(int id, [FromBody]MascotaDto entidadDto){
         if(entidadDto == null)
         {
             return NotFound();
